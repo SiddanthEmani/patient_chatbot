@@ -51,7 +51,7 @@ The **Patient Assistant Chatbot** is an intelligent conversational agent designe
 The project is built using a modular architecture that integrates various components to deliver a cohesive chatbot experience. Here's an overview of the system's architecture:
 
 ```mermaid
-%%{init: {'theme': 'default', 'flowchart': {'curve': 'basis'}}}%%
+%%{init: {'theme': 'base', 'flowchart': {'curve': 'basis'}}}%%
 
 graph LR
 
