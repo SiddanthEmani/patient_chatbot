@@ -51,63 +51,86 @@ The **Patient Assistant Chatbot** is an intelligent conversational agent designe
 The project is built using a modular architecture that integrates various components to deliver a cohesive chatbot experience. Here's an overview of the system's architecture:
 
 ```mermaid
-%%{init: {'theme': 'forest', 'flowchart': {'curve': 'basis'}, 'look': 'handDrawn', layout:'dagre'}}%%
-
+%%{init: {'theme': 'forest', 'flowchart': {'curve': 'basis'}}}%%
 graph LR
-subgraph "Client Layer"
-A[Web Browser]:::client
-end
-subgraph "Backend Layer"
-B[Django Backend]:::backend
-C[Views]:::backend
-D[WebSocket Consumers]:::backend
-E[Models]:::backend
-F[AI Integration]:::backend
-G[Graph Utilities]:::backend
-H[Neo4j Helper]:::backend
-I[AI Action Helpers]:::backend
-J[Logging]:::backend
-end
-subgraph "Databases Layer"
-K[(PostgreSQL Database)]:::databases
-L[(Neo4j Graph Database)]:::databases
-end
-subgraph "AI Services Layer"
-M[LangChain]:::ai
-N[Google Generative AI Gemini]:::ai
-end
-subgraph "External Systems Layer"
-O[Email Notifications]:::external
-P[Appointment Scheduling System]:::external
-end
-A -->|HTTP/WebSocket| B
-B --> C
-B --> D
-B --> E
-B --> F
-B --> G
-B --> H
-B --> I
-B --> J
-E --> K
-G --> K
-G --> L
-H --> L
-I --> H
-I --> L
-F --> M
-F --> N
-F --> H
-I -->|Sends Notifications| O
-I -->|Schedules Appointments| P
-P --> L
-class A client
-class B,C,D,E,F,G,H,I,J backend
-class K,L databases
-class M,N ai
-class O,P external
-
-
+    %% Styling Definitions %%
+    classDef client fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef backend fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef databases fill:#bfb,stroke:#333,stroke-width:2px;
+    classDef ai fill:#ffb,stroke:#333,stroke-width:2px;
+    classDef external fill:#fbb,stroke:#333,stroke-width:2px;
+    
+    %% Clients %%
+    subgraph "Client Layer"
+        A[Web Browser]:::client
+    end
+    
+    %% Django Backend %%
+    subgraph "Backend Layer" 
+        B[Django Backend]:::backend
+        C[Views]:::backend
+        D[WebSocket Consumers]:::backend
+        E[Models]:::backend
+        F[AI Integration]:::backend
+        G[Graph Utilities]:::backend
+        H[Neo4j Helper]:::backend
+        I[AI Action Helpers]:::backend
+        J[Logging]:::backend
+    end
+    
+    %% Databases %%
+    subgraph "Databases Layer"
+        K[(PostgreSQL Database)]:::databases
+        L[(Neo4j Graph Database)]:::databases
+    end
+    
+    %% AI Services %%
+    subgraph "AI Services Layer"
+        M[LangChain]:::ai
+        N[Google Generative AI Gemini]:::ai
+    end
+    
+    %% External Systems %%
+    subgraph "External Systems Layer"
+        O[Email Notifications]:::external
+        P[Appointment Scheduling System]:::external
+    end
+    
+    %% Interactions %%
+    A -->|HTTP/WebSocket| B
+    B --> C
+    B --> D
+    B --> E
+    B --> F
+    B --> G
+    B --> H
+    B --> I
+    B --> J
+    
+    %% Backend to Databases %%
+    E --> K
+    G --> K
+    G --> L
+    H --> L
+    I --> H
+    I --> L
+    
+    %% AI Integration %%
+    F --> M
+    F --> N
+    F --> H
+    
+    %% External Systems Interaction %%
+    I -->|Sends Notifications| O
+    I -->|Schedules Appointments| P
+    P --> L
+    
+    %% Styling Assignments %%
+    class A client
+    class B,C,D,E,F,G,H,I,J backend
+    class K,L databases
+    class M,N ai
+    class O,P external
 ```
 
 1. **Django Backend:**
