@@ -1,6 +1,6 @@
 # Patient Chatbot
 
-![Patient Chatbot Preview](chat/static/chat/images/Patient Chatbot Preview.png)
+![Patient Chatbot Preview](staticfiles/chat/images/Patient%20Chatbot%20Preview.png)
 
 ## Table of Contents
 
