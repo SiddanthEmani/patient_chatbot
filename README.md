@@ -1,7 +1,7 @@
 # Patient Chatbot
 
 <p align="center">
-  <img src="staticfiles/chat/images/Patient%20Chatbot%20Preview.png" width="300" alt="Patient Chatbot Preview">
+  <img src="staticfiles/chat/images/Patient%20Chatbot%20Preview.png" width="500" alt="Patient Chatbot Preview">
 </p>
 
 ## Table of Contents
