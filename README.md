@@ -1,6 +1,8 @@
 # Patient Chatbot
 
-![Patient Chatbot Preview](staticfiles/chat/images/Patient%20Chatbot%20Preview.png | width=200)
+<p align="center">
+  <img src="staticfiles/chat/images/Patient%20Chatbot%20Preview.png" width="300" alt="Patient Chatbot Preview">
+</p>
 
 ## Table of Contents
 
