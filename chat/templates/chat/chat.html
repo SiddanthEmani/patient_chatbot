@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Chatbot</title>
+    <link rel="stylesheet" href="{% static 'chat/css/styles.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-history">
+            <!-- Conversation history will be dynamically loaded here -->
+            <!-- Example message structure -->
+            <!--
+            <div class="message user">
+                <div class="message-content">
+                    <p>Hello, how are you?</p>
+                    <div class="timestamp">2023-09-18 10:00 AM</div>
+                </div>
+            </div>
+            <div class="message bot">
+                <div class="message-content">
+                    <p>I'm good, thank you!</p>
+                    <div class="timestamp">2023-09-18 10:01 AM</div>
+                </div>
+            </div>
+            -->
+        </div>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="Type your message..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!--Set this dynamically later to reflect the current user-->
+    <input type="hidden" id="patient-id" value={{patient_id}}></input>
+    <script src="{% static 'chat/js/chat.js' %}"></script>
+</body>
+</html>

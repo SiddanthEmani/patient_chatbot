@@ -1,0 +1,117 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+#chat-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-history {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #fafafa;
+}
+
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.message.bot {
+    justify-content: flex-start;
+}
+
+.message-content {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    position: relative;
+    word-wrap: break-word;
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+.message.user .message-content {
+    background-color: #dcf8c6;
+}
+
+.message.bot .message-content {
+    background-color: #e6e6e6;
+}
+
+.message-content::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.message.user .message-content::after {
+    right: -20px;
+    border-color: transparent transparent transparent #dcf8c6;
+    border-width: 10px 0 10px 10px;
+}
+
+.message.bot .message-content::after {
+    left: -20px;
+    border-color: transparent #e6e6e6 transparent transparent;
+    border-width: 10px 10px 10px 0;
+}
+
+#chat-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+#chat-form button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#chat-form button:hover {
+    background-color: #45a049;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
